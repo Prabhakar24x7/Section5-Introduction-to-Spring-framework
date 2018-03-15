@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="myorg"
+		class="com.prabhakar.springdemo.domain.Organization">
+		<constructor-arg value="BMW"></constructor-arg>
+		<constructor-arg value="1929"></constructor-arg>
+		<property name="postalCode" value="5929"></property>
+		<property name="employeeCount" value="500"></property>
+		
+		
+		<property name="slogan"
+			value="Work hard, earn better, make fun">
+		</property>
+		
+		<property name="businessService" ref="cloudService"></property>
+	</bean>
+
+
+	<bean id="cloudService"
+		class="com.prabhakar.springdemo.serviceImpl.CloudServiceImpl">
+	</bean>
+	<bean id="ecommerceService"
+		class="com.prabhakar.springdemo.serviceImpl.EcommerceServiceImpl">
+	</bean>
+	
+</beans>
